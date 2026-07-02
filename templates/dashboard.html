@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OptiCrop – Performance Analytics Dashboard</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Custom Glassmorphism CSS -->
+  <link href="/static/css/style.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+</head>
+<body>
+
+  <!-- Top Navigation Header -->
+  <nav class="navbar navbar-expand-lg border-b border-white/5 bg-slate-950/20 backdrop-blur-md sticky-top py-3">
+    <div class="container">
+      <a class="navbar-brand d-flex align-items-center gap-2 text-white" href="/">
+        <i class="bi bi-sprout-fill text-success fs-4"></i>
+        <span class="display-font fs-4 font-bold tracking-tight">Opti<span class="text-success">Crop</span></span>
+      </a>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto gap-3">
+          <li class="nav-item">
+            <a class="nav-link-custom d-flex align-items-center gap-1.5" href="/"><i class="bi bi-sliders"></i> Optimizer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link-custom active d-flex align-items-center gap-1.5" href="/dashboard"><i class="bi bi-graph-up-arrow"></i> Performance Analytics</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Dashboard Body -->
+  <div class="container my-5">
+    
+    <!-- Title Section -->
+    <div class="text-center mb-5">
+      <h2 class="text-white display-6 font-extrabold tracking-tight">Model Performance & Telemetry Dashboard</h2>
+      <p class="text-slate-400 max-w-lg mx-auto mt-2">
+        Compare classification accuracy, inspect relative feature weights, and check error distributions across model evaluations.
+      </p>
+    </div>
+
+    <!-- Models Comparison Table -->
+    <div class="glass-panel p-5 mb-5">
+      <h4 class="text-white mb-4 d-flex align-items-center gap-2">
+        <i class="bi bi-table text-success"></i> Model Precision Comparison Matrix
+      </h4>
+      <div class="table-responsive">
+        <table class="table table-dark table-hover border-white/5 fs-7 align-middle mb-0">
+          <thead>
+            <tr class="text-slate-400 border-b border-white/10 uppercase tracking-wider fs-8 font-bold">
+              <th class="py-3 px-4">Classifier Model</th>
+              <th class="py-3 px-4 text-center">Accuracy</th>
+              <th class="py-3 px-4 text-center">Weighted Precision</th>
+              <th class="py-3 px-4 text-center">Weighted Recall</th>
+              <th class="py-3 px-4 text-center text-success">Weighted F1-Score</th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for name, stats in meta.comparison.items() %}
+              <tr class="border-b border-white/5">
+                <td class="py-3 px-4 font-semibold text-white d-flex align-items-center gap-2">
+                  <span class="w-2 h-2 rounded-circle {% if name == meta.best_model_name %}bg-success animate-pulse{% else %}bg-secondary{% endif %}"></span>
+                  {{ name }} {% if name == meta.best_model_name %}(Winning Classifier){% endif %}
+                </td>
+                <td class="py-3 px-4 text-center font-bold">{{ (stats.accuracy * 100) | round(2) }}%</td>
+                <td class="py-3 px-4 text-center text-slate-350">{{ (stats.precision * 100) | round(2) }}%</td>
+                <td class="py-3 px-4 text-center text-slate-350">{{ (stats.recall * 100) | round(2) }}%</td>
+                <td class="py-3 px-4 text-center text-success font-extrabold">{{ (stats.f1 * 100) | round(2) }}%</td>
+              </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Analytics Visual Charts -->
+    <div class="row g-4">
+      
+      <!-- Comparison Bar Plot -->
+      <div class="col-md-6">
+        <div class="glass-panel p-4 h-100">
+          <h5 class="text-white mb-3 font-bold d-flex align-items-center gap-2">
+            <i class="bi bi-bar-chart-fill text-success"></i> Model Accuracy Comparison
+          </h5>
+          <div class="text-center p-2 rounded-3 border border-white/5 bg-slate-900/40">
+            <img src="/static/images/model_comparison.png" alt="Model Comparison" class="img-fluid rounded shadow-lg max-h-350">
+          </div>
+        </div>
+      </div>
+
+      <!-- Feature Importance Plot -->
+      <div class="col-md-6">
+        <div class="glass-panel p-4 h-100">
+          <h5 class="text-white mb-3 font-bold d-flex align-items-center gap-2">
+            <i class="bi bi-diagram-3-fill text-success"></i> Random Forest Feature Importances
+          </h5>
+          <div class="text-center p-2 rounded-3 border border-white/5 bg-slate-900/40">
+            <img src="/static/images/feature_importance.png" alt="Feature Importance" class="img-fluid rounded shadow-lg max-h-350">
+          </div>
+        </div>
+      </div>
+
+      <!-- Confusion Matrix Heatmap -->
+      <div class="col-12">
+        <div class="glass-panel p-4">
+          <h5 class="text-white mb-3 font-bold d-flex align-items-center gap-2">
+            <i class="bi bi-grid-3x3-gap-fill text-success"></i> Classification Confusion Matrix Heatmap
+          </h5>
+          <div class="text-center p-3 rounded-3 border border-white/5 bg-slate-900/40">
+            <img src="/static/images/confusion_matrix.png" alt="Confusion Matrix" class="img-fluid rounded shadow-lg">
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- Bootstrap Bundle JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
