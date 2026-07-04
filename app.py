@@ -204,6 +204,15 @@ def dashboard():
         meta=models["meta"]
     )
 
+
+@app.route("/weather")
+def weather():
+    return render_template("weather.html")
+
+@app.route("/ai-advisor")
+def ai_advisor():
+    return render_template("ai_advisor.html")
+
 @app.route("/api/health")
 def health():
     return jsonify({

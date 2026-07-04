@@ -1,12 +1,12 @@
-# OptiCrop – Smart Agricultural Production Optimization Engine
+# 🌾 OptiCrop – Smart Agricultural Production Optimization Engine
 
-OptiCrop is an intelligent, machine learning-based agricultural recommendation system designed to help farmers, agricultural researchers, and agribusinesses optimize crop production. The engine processes environmental and soil parameters to recommend the most suitable crop, predict expected crop yield, classify soil conditions, and provide actionable soil replenishment prescriptions.
+OptiCrop is an intelligent, machine learning-powered agricultural decision engine designed to help agronomists, farmers, and agribusinesses optimize crop production. By analyzing soil chemical metrics (NPK) and climate telemetry (temperature, moisture, pH, rainfall), OptiCrop predicts the most suitable crops, estimates yields, categorizes soil clusters, and suggests specific soil replenishment treatments.
 
 ---
 
 ## 🏛️ System Architecture Topology
 
-The application is built as a complete, lightweight, and responsive web application using the following stack:
+The application integrates machine learning pipelines with an elegant Flask web backend and a glassmorphic dashboard:
 
 ```mermaid
 graph TD
@@ -16,23 +16,31 @@ graph TD
     App -->|JSON Telemetry| Dashboard[Performance Analytics Dashboard]
 ```
 
-* **Frontend**: HTML5, Vanilla CSS (Glassmorphism & animations), Bootstrap 5, Bootstrap Icons.
-* **Backend**: Flask web framework, modular Python endpoints, Jinja2 templating.
-* **Machine Learning & Analysis**:
-  * **Classifier Models**: K-Nearest Neighbors (KNN), Logistic Regression, Decision Tree, Random Forest (Winning model selected for prediction).
-  * **Clustering**: K-Means Clustering for soil categorization.
-  * **Regressor**: Random Forest Regressor for crop yield forecasting.
-  * **Data Processing**: Scikit-Learn (StandardScaler, LabelEncoder), Pandas, NumPy.
-  * **Analytics Plotting**: Matplotlib & Seaborn.
-* **Storage**: CSV-based data persistence (`datasets/user_predictions.csv`) logging user queries and predictions for future analytics.
+* **Frontend**: Responsive HTML5, Bootstrap 5, Bootstrap Icons, custom glassmorphism styling, and a global looping agricultural video background.
+* **Backend**: Flask web framework, modular endpoints, Jinja2 templating, and custom session authentication gates.
+* **Machine Learning Engine**:
+  * **Classifier Models**: K-Nearest Neighbors (KNN), Logistic Regression, Decision Tree, and Random Forest (Winning model selected for prediction).
+  * **Soil Clustering**: K-Means Clustering for soil cluster mapping.
+  * **Yield Forecasting**: Random Forest Regressor for crop productivity estimation.
+  * **Pipelines**: StandardScaler and LabelEncoder preprocessing.
+* **Data Logging**: Custom CSV persistence (`datasets/user_predictions.csv`) tracking all queries and model inferences.
+
+---
+
+## ✨ Key Features & User Interface Upgrades
+
+* **🔒 Split-Panel Security Gate**: A modern, split-screen authentication screen with a demo credentials card, custom farmer graphics, and standard glowing abstract orb details.
+* **🎥 Ambient Background Video**: A looping, high-quality agricultural video running globally in the page background under a semi-transparent frosted-glass overlay.
+* **⚡ Quick Crop Presets**: Instant form autofill chips for standard crop profiles (**Rice**, **Maize**, and **Watermelon**).
+* **🎨 Clean Form Inputs**: Removed default selected choices and example placeholders, enabling a completely clean, user-friendly initial form entry.
 
 ---
 
 ## ⚙️ Quick Start Installation Guide
 
-### Standalone Local Setup
+### Local Virtual Environment Setup
 
-#### Step 1: Set Up Python Virtual Environment
+#### 1. Set Up Python & Virtual Environment
 Ensure you have Python 3.10+ installed. In your terminal, run:
 
 ```bash
@@ -46,42 +54,42 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-#### Step 2: Install Dependencies
+#### 2. Install Dependencies
 ```bash
 pip install -r requirements.txt
 ```
 
-#### Step 3: Run the Data Generation & Model Training Pipeline
-To generate the agricultural datasets and train the machine learning models:
+#### 3. Run Dataset Generation & Model Training Pipeline
+Train all models, compile metrics, and generate evaluation plots under static assets:
 
 ```bash
 # 1. Generate synthetic soil and yield datasets
 python generate_datasets.py
 
-# 2. Train all models, compare accuracies, and generate visualization plots
+# 2. Train and evaluate all machine learning models
 python train_models.py
 ```
-This generates:
-* Pickled model artifacts under `models/` (`best_model.pkl`, `scaler.pkl`, `label_encoder.pkl`, `kmeans_model.pkl`, `yield_model.pkl`, `yield_encoders.pkl`, `metadata.pkl`).
-* Model evaluation plots under `static/images/` (`model_comparison.png`, `confusion_matrix.png`, `feature_importance.png`).
 
-#### Step 4: Run Flask Web Application
+This creates:
+* Pickled model files under `models/` (`best_model.pkl`, `scaler.pkl`, `kmeans_model.pkl`, etc.).
+* Model evaluation plots under `static/images/` (`model_comparison.png`, `confusion_matrix.png`, etc.).
+
+#### 4. Run Flask Web Application
 ```bash
 python app.py
 ```
-Open your browser and navigate to `http://localhost:5000` to access the OptiCrop Optimizer dashboard.
+Open your browser and navigate to `http://localhost:5000` to access the OptiCrop Optimizer.
 
 ---
 
 ## 🧪 Running Automated Unit Tests
 
-The test suite validates home routing, classification endpoints, persistence logic, and API health status.
+Verify Flask routing, ML predictions, CSV storage, and API health:
 
 ```bash
 # Execute unit tests with pytest
 python -m pytest tests/
 ```
-All tests execute successfully and verify that predictions are accurately recorded to the user data storage.
 
 ---
 
@@ -89,7 +97,6 @@ All tests execute successfully and verify that predictions are accurately record
 
 ```
 SmartBridge/
-├── .venv/                   # Python virtual environment (ignored by git)
 ├── datasets/                # Agricultural CSV datasets and predictions log
 │   ├── crop_recommendation_dataset.csv
 │   ├── crop_yield_dataset.csv
@@ -107,12 +114,15 @@ SmartBridge/
 │   │   └── style.css
 │   └── images/
 │       ├── confusion_matrix.png
-│       ├── feature_importance.png
+│       ├── crop_farmers.png      # Custom crop farmers portal graphic
+│       ├── login_bg.mp4          # Premium background video asset
 │       └── model_comparison.png
 ├── templates/               # Jinja2 HTML layout files
+│   ├── ai_advisor.html
 │   ├── dashboard.html
 │   ├── index.html
-│   └── result.html
+│   ├── result.html
+│   └── weather.html
 ├── tests/                   # Python test suite scripts
 │   └── test_app.py
 ├── .gitignore               # Version control ignore specifications
