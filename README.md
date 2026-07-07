@@ -113,8 +113,8 @@ SmartBridge/
 │   ├── css/
 │   │   └── style.css
 │   └── images/
+│       ├── Smart.png             # Custom login page graphic
 │       ├── confusion_matrix.png
-│       ├── crop_farmers.png      # Custom crop farmers portal graphic
 │       ├── login_bg.mp4          # Premium background video asset
 │       └── model_comparison.png
 ├── templates/               # Jinja2 HTML layout files
