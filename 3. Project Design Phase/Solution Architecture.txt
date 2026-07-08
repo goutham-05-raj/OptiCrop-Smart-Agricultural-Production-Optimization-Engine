@@ -1,0 +1,26 @@
+======================================================================
+SOLUTION ARCHITECTURE DELIVERABLE
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+The application follows a modular architecture containing four layers:
+
+1. Presentation Layer (Frontend):
+   - HTML templates (`index.html`, `result.html`, `dashboard.html`, `weather.html`, `ai_advisor.html`).
+   - Custom CSS stylesheet (`style.css`) implementing dark-themed glassmorphism.
+   - Bootstrap 5 for layout responsiveness.
+
+2. Orchestration Layer (Flask Backend):
+   - `app.py`: Spawns the Flask container, sets up routing handlers, sanitizes form inputs, coordinates model inference, and logs predictions.
+
+3. Predictive Layer (ML Models):
+   - Deserialized Pickle pipelines loaded on server start:
+     * `scaler.pkl`: StandardScaler transformation pipeline.
+     * `best_model.pkl`: Random Forest crop recommendation classifier.
+     * `kmeans_model.pkl`: K-Means soil grouping clusters.
+     * `yield_model.pkl`: Random Forest expected yield regressor.
+     * `label_encoder.pkl` / `yield_encoders.pkl`: Categorical variable translation maps.
+
+4. Storage Layer (Data Logs):
+   - CSV storage file `datasets/user_predictions.csv` stores inputs and outputs for auditing and future retraining.

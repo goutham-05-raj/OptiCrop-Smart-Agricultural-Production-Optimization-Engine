@@ -1,0 +1,19 @@
+======================================================================
+CODING & SOLUTION DELIVERABLE
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+This document summarizes the backend and frontend code implementation:
+
+1. Flask Web Server Core Routing (`app.py`):
+ - Loads serialized pipelines (best_model.pkl, scaler.pkl, kmeans_model.pkl, yield_model.pkl) into memory on server startup.
+ - Exposes routes `/`, `/predict`, `/dashboard`, `/weather`, `/ai-advisor`, and `/api/health`.
+ - `/predict` route sanitizes form data, scales inputs, calls models, logs inputs to `user_predictions.csv`, computes NPK corrective guidelines, and renders `result.html`.
+
+2. Machine Learning Pipeline (`train_models.py`):
+ - Preprocesses datasets using StandardScaler and LabelEncoder.
+ - Trains KNN, Logistic Regression, Decision Tree, and Random Forest models.
+ - Saves the best classifier (Random Forest) and scaler pipelines to pickle binaries.
+ - Fits a K-Means model to cluster soil chemistries and a Random Forest Regressor to predict yields.
+ - Saves visual metrics charts (accuracies bar chart, confusion matrix, feature importances) to `static/images/`.

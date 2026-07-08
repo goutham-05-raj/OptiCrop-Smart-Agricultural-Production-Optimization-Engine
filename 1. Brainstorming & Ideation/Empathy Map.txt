@@ -1,0 +1,23 @@
+======================================================================
+USER PERSONAS AND EMPATHY MAPS
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+1. Persona A: Rajesh - Traditional Smallholder Farmer
+ - Profile: 45-year-old farmer who relies on his land for his family's livelihood. Uses traditional methods.
+ - Says: 'I want to maximize my yields, but fertilizer and seed costs are becoming unsustainable.'
+ - Does: Uses traditional crop cycles and applies generic fertilizers based on retail recommendations.
+ - Thinks: 'Will the rains be sufficient this year? Is my soil losing its fertility permanently?'
+ - Feels: Anxious about crop failure, market price instability, and lack of technical knowledge.
+ - Pains: Rising input costs, declining yields, and weather unpredictability.
+ - Gains: Direct crop suggestions, nutrient corrective guidance, and yield forecasts to minimize risk.
+
+2. Persona B: Dr. Anita - Agricultural Research Consultant
+ - Profile: Agronomist who conducts research on soil-crop interactions to advise local farming agencies.
+ - Says: 'We need scientific, data-driven frameworks to educate farmers and optimize resource application.'
+ - Does: Performs soil tests, evaluates crop performance, and compiles technical advisory papers.
+ - Thinks: 'How can we leverage predictive models to scale agronomic recommendations?'
+ - Feels: Optimistic about AI in farming but demands transparent and accurate model validation telemetry.
+ - Pains: Segmented datasets, time-consuming lab processes, and difficulty translating data into simple advice.
+ - Gains: An analytics dashboard showing model performance comparisons, feature importance, and soil clusters.

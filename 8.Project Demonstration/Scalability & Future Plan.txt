@@ -1,0 +1,19 @@
+======================================================================
+SCALABILITY & FUTURE ROADMAP
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+Future roadmap to scale the Opticrop application:
+
+1. IoT Sensor API Integration:
+   Expose REST API endpoints to receive real-time telemetry from field IoT sensors (soil moisture, temperature, pH, and precipitation sensors). This allows the engine to update recommendations dynamically based on real-time field data.
+
+2. Localized Weather API Integration:
+   Connect the web backend with external meteorological APIs (e.g. OpenWeatherMap) to fetch local precipitation forecasts. This can be used to suggest dynamic irrigation schedules based on weather forecasts.
+
+3. Leaf Disease Classification CNN:
+   Integrate a PyTorch Convolutional Neural Network (CNN) model to classify crop leaf anomalies from uploaded images. This allows the system to recommend treatments alongside crop selections.
+
+4. Multi-Tenant SaaS Deployment:
+   Configure Firebase or Auth0 authentication layers to support secure user accounts, saving field prediction histories over time, and allowing cooperative team access.

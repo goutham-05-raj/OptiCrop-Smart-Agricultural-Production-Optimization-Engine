@@ -1,0 +1,33 @@
+======================================================================
+TECHNOLOGY STACK DELIVERABLE
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+Opticrop is developed using the following technologies:
+
+1. Core Programming Languages & Runtime Environment:
+ - Python 3.10+ (Language interpreter)
+ - JavaScript / Vanilla JS (Client-side interactive behaviors)
+
+2. Backend Web Application Framework:
+ - Flask 3.1.3 (WSGI routing controller & Jinja2 Template Engine)
+ - Werkzeug 3.1.8 (Flask WSGI runtime helper)
+
+3. Data Analytics & Machine Learning Pipeline:
+ - Scikit-learn 1.9.0 (Ensemble Random Forest, KNN, Logistic Regression, K-Means clustering pipelines)
+ - Pandas 3.0.3 (Dataframes, CSV parser & history writer)
+ - NumPy 2.5.1 (Mathematical operations and array formatting)
+
+4. Scientific Plotting & Data Visualization:
+ - Matplotlib 3.11.0 (Non-interactive 'Agg' backend plotter)
+ - Seaborn 0.13.2 (Statistical confusion matrices heatmap visualization)
+
+5. Frontend UI Styles & Design Frameworks:
+ - HTML5 (Semantic document outline structures)
+ - CSS3 (Custom Glassmorphism layout design, linear gradients, transitions)
+ - Bootstrap 5 (Responsive flex grids, navbar, tables, forms layout)
+
+6. Testing Suite & Version Control:
+ - Pytest 9.0.2 / Python unittest (Automated test executions)
+ - Git Version Control (Repository tracking and master commits)

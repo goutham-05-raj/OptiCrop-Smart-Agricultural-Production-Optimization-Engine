@@ -1,0 +1,23 @@
+======================================================================
+NO. OF FUNCTIONAL FEATURES INCLUDED IN THE SOLUTION
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+Opticrop includes the following five core functional features:
+
+1. Smart Crop Recommendation Classifier:
+   Predicts the best crop from 22 distinct categories based on soil NPK levels, pH, and environmental climate inputs.
+
+2. Expected Crop Yield Regressor:
+   Uses Random Forest regression models to estimate expected crop yields (tons/hectare) for the recommended crops.
+
+3. Soil Health Cluster Diagnoser:
+   Uses K-Means clustering to classify soil into 5 diagnostic categories, providing insights on soil structure.
+
+4. NPK Vitality Correction Prescriptions:
+   Analyzes soil nutrient levels against target ranges for the recommended crop, generating fertilizer corrective suggestions.
+
+5. Performance Analytics & Weather Telemetry Dashboards:
+   - `dashboard.html` visualizes model accuracy, feature importances, and confusion matrices.
+   - `weather.html` simulates climate telemetry, tracking temperature, humidity, and rainfall trends.

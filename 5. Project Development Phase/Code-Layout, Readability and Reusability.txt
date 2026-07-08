@@ -1,0 +1,21 @@
+======================================================================
+CODE-LAYOUT, READABILITY AND REUSABILITY
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+Opticrop enforces code standards, modularity, and naming conventions to ensure readability and reusability:
+
+1. Project Directory Modularity:
+ - Scripts are decoupled by functional boundaries:
+   * `generate_datasets.py`: Handles mock dataset generation.
+   * `train_models.py`: Handles data preprocessing, training, model evaluation, and pickle serialization.
+   * `app.py`: Spawns the web server container and handles web routing.
+ - Image visualizers, stylesheets, and Jinja2 templates are organized into `static/` and `templates/` folders.
+ - Automated tests are separated into `tests/test_app.py`.
+
+2. Code Readability Guidelines:
+ - PEP 8: Adheres to Python styling guidelines (e.g. 4-space indentations, explicit import declarations).
+ - Variable Naming: Uses descriptive names in lower_snake_case (e.g., `scaled_features`, `expected_yield`).
+ - Comments: Explains logical blocks (e.g., `# 1. Scale inputs`, `# 2. Classify crop`).
+ - Error Handling: Uses try-except blocks to catch prediction and model loading errors.

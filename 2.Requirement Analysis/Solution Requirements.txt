@@ -1,0 +1,21 @@
+======================================================================
+SOLUTION REQUIREMENTS DELIVERABLE
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+1. Functional Requirements:
+ - Input Form: The system must provide forms to capture Nitrogen, Phosphorous, Potassium, Temperature, Humidity, Soil pH, Rainfall, Location, and Season.
+ - Input Bounds checks: Form inputs must be validated within ranges (N, P, K: 0-200+ kg/ha; pH: 0-14; rainfall: 0-400+ mm; humidity: 0-100%).
+ - Classification: Recommend one of 22 crops based on inputs using Random Forest.
+ - Yield Prediction: Predict yield outputs in tons/hectare for the recommended crop.
+ - Clustering: Group soil profile into 5 diagnostic clusters using K-Means.
+ - NPK Vitality Correction: Compare inputs against optimal thresholds, generating fertilizer corrective suggestions.
+ - Telemetry Logs: Logs inputs and outputs to 'datasets/user_predictions.csv' for audit retention.
+ - Analytics Panel: Present classifier comparison tables, feature importance rankings, and confusion matrices.
+
+2. Non-Functional Requirements:
+ - Performance Accuracy: Core Random Forest classifier must maintain >= 98% accuracy on test splits.
+ - Response Latency: Model predictions and template rendering must compile under 1.5 seconds.
+ - Responsiveness: UI layouts must adapt cleanly across desktop, tablet, and mobile platforms.
+ - Security: Input forms must sanitize parameters to avoid script injections.

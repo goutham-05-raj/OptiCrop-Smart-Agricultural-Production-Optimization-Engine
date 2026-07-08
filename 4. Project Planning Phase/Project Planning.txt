@@ -1,0 +1,28 @@
+======================================================================
+PROJECT PLANNING AND DELIVERABLES WORKFLOW
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+This document outlines the planning, milestones, and task breakdowns:
+
+1. Project Timeline & Milestones:
+ - Week 1: Brainstorming, ideation, and defining objectives. (Milestone 1 - Complete)
+ - Week 2: Requirement analysis, DFD mapping, and technology stack selection. (Milestone 2 - Complete)
+ - Week 3: Solution design, architectural layout, and database structure. (Milestone 3 - Complete)
+ - Week 4: Machine learning training, model tuning, and serialization. (Milestone 4 - Complete)
+ - Week 5: Flask backend controller setup and HTML templates integration. (Milestone 5 - Complete)
+ - Week 6: Verification, automated testing, and local deployment. (Milestone 6 - Complete)
+
+2. Gantt-Style Tasks Breakdown:
+------------------------------------------------------------------------------------------
+Task Name                 | Start Date | End Date   | Status      | Assignee / Team Member
+------------------------------------------------------------------------------------------
+Environment Configuration  | June 1     | June 3     | Completed   | ML/Ops Team
+Dataset Generation & Prep  | June 4     | June 8     | Completed   | Data Science Team
+ML Model Training & Pickle | June 9     | June 15    | Completed   | Data Science Team
+Flask Server Development   | June 16    | June 22    | Completed   | Backend Developers
+Frontend Layout & CSS      | June 23    | June 29    | Completed   | UI/UX Designers
+Unit Testing & Debugging   | June 30    | July 2     | Completed   | QA Engineers
+Final Documentation        | July 3     | July 7     | Completed   | Documentation Team
+------------------------------------------------------------------------------------------

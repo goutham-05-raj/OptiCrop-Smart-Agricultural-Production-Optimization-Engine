@@ -1,0 +1,18 @@
+======================================================================
+DEFINE PROBLEM STATEMENTS DELIVERABLE
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+1. The Crisis in Traditional Farming:
+Traditional agricultural practices rely on history or heuristics to select crops and apply fertilizers. This leads to severe operational inefficiencies:
+ - Crop Misalignment: Planting crops incompatible with soil nutrient levels and weather patterns, resulting in low yields.
+ - Nutrient Imbalance: Over-applying or under-applying NPK chemical fertilizers, causing soil degradation, groundwater pollution, and financial waste.
+ - Yield Uncertainty: Inability to forecast yields, increasing financial risks for smallholder farmers.
+
+2. Core Project Objectives:
+Opticrop addresses these challenges by developing a smart production optimization engine that:
+ - Recommends the most suitable crop based on N, P, K, pH, rainfall, temperature, and humidity.
+ - Predicts expected crop yields (tons/hectare) for the recommended crops.
+ - Classifies soil health characteristics using unsupervised clustering.
+ - Provides automated NPK corrective guidelines to balance nutrients and reduce fertilizer waste.

@@ -1,0 +1,18 @@
+======================================================================
+COMMUNICATION LOG DELIVERABLE
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+This document outlines communication methods, roles, and project collaboration:
+
+1. Team Roles & Responsibilities:
+ - Project Lead / Coordinator: Defines milestones and reviews progress.
+ - Data Science & ML Specialist: Preprocesses datasets, trains algorithms, and serializes models.
+ - Backend Flask Developer: Implements orchestration logic, API endpoints, and database/CSV logs.
+ - UI/UX Frontend Designer: Builds HTML templates, custom CSS stylesheets, and Bootstrap pages.
+
+2. Collaboration & Check-in Schedule:
+ - Daily Stand-ups: Brief virtual meetings to track progress on tasks.
+ - Code Reviews: Conducted on Git branches before merging into master.
+ - Shared Folder: All deliverables and assets are organized in the workspace.

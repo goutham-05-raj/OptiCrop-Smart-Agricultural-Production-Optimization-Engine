@@ -1,0 +1,26 @@
+======================================================================
+PROJECT EXECUTABLE FILES CHECKLIST
+Team ID: 12344 | Project Name: Opticrop
+Date: July 7, 2026
+======================================================================
+
+This document lists the executable and configuration files included in the project:
+
+1. Source Code Executables:
+ - `app.py`: Spawns the Flask web app server, handles routing, and serves pages.
+ - `train_models.py`: Runs data preprocessing, model training, and serializes pickle binaries.
+ - `generate_datasets.py`: Generates the mock CSV datasets for crop recommendations and yields.
+ - `tests/test_app.py`: Exposes automated unit tests to verify routes and prediction assertions.
+
+2. Serialized ML Model Binaries:
+ - `models/best_model.pkl`: Serialized Random Forest Classifier.
+ - `models/scaler.pkl`: Serialized StandardScaler transformation pipeline.
+ - `models/label_encoder.pkl`: Mapped target category array mapping.
+ - `models/kmeans_model.pkl`: Serialized K-Means Clustering model.
+ - `models/yield_model.pkl`: Serialized Random Forest Regressor.
+ - `models/yield_encoders.pkl`: Serialized category encoders for location and season.
+ - `models/metadata.pkl`: Serialized model training comparators.
+
+3. Project Configuration Files:
+ - `requirements.txt`: Declares the dependency libraries for Python pip.
+ - `powershell.cmd`: Utility command script to launch PowerShell.
