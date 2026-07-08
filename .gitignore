@@ -1,30 +1,29 @@
-# Python bytecode and caches
+# Secrets — never commit to public repo
+.env
+**/.env
+
+# Database — runtime artifact
+*.db
+**/instance/*.db
+
+# Model artifacts — large binary files
+**/*.pkl
+**/saved_models/*.pkl
+
+# Python cache
 __pycache__/
 *.pyc
 *.pyo
-*.pyd
+.hypothesis/
 
-# Testing
-.pytest_cache/
-.pytest_cache
-.coverage
-htmlcov/
-
-# Environments
-.venv/
-venv/
-ENV/
-env/
-
-# Databases & local user files
-*.db
-opticrop.db
-test.db
-test_ml.db
-datasets/user_predictions.csv
-
-# IDE / OS files
+# Kiro IDE
+.kiro/
 .vscode/
-.idea/
-.DS_Store
-Thumbs.db
+
+# Test artifacts
+.pytest_cache/
+.coverage
+
+# Logs
+*.log
+**/logs/*.log
