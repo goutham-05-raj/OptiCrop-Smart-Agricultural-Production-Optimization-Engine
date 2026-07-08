@@ -1,8 +1,8 @@
 import os, stat, shutil, glob, fitz
 
-team_id = "12344"
+team_id = ""
 project_name = "Opticrop"
-submission_date = "06 july-2026"
+submission_date = "06-07-2026"
 
 # ─── helpers ──────────────────────────────────────────────────────────────────
 
