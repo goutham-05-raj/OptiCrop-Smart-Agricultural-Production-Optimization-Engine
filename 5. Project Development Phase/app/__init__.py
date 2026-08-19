@@ -2,6 +2,7 @@ import os
 import sys
 import logging
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS
 
 from app.config import DevelopmentConfig, ProductionConfig
 from app.extensions import csrf, limiter
@@ -10,6 +11,7 @@ from app.utils.correlation_id import generate_correlation_id
 
 def create_app():
     app = Flask(__name__)
+    CORS(app, supports_credentials=True)
 
     flask_env = os.environ.get('FLASK_ENV')
     if flask_env == 'development':
@@ -48,7 +50,10 @@ def create_app():
     log_dir = os.path.dirname(log_path)
     if log_dir:
         os.makedirs(log_dir, exist_ok=True)
-    os.makedirs(app.config.get('EDA_STATIC_DIR', 'app/static/eda/'), exist_ok=True)
+    eda_dir = app.config.get('EDA_STATIC_DIR', 'app/static/eda/')
+    if eda_dir == 'app/static/eda/':
+        eda_dir = os.path.join(app.root_path, 'static', 'eda')
+    os.makedirs(eda_dir, exist_ok=True)
 
     # ── Initialize the PredictionEngine ONCE at startup ──────────────────────
     # Loading from disk on every request is O(model_size) overhead per call.
