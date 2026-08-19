@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "buildCommand": "cd \"5. Project Development Phase/frontend\" && npm install && npm run build",
+  "outputDirectory": "5. Project Development Phase/frontend/dist",
+  "rewrites": [
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
+}
