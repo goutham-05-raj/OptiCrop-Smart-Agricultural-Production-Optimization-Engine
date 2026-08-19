@@ -1,6 +1,6 @@
 # OptiCrop
 
-🚀 **Live Demo:** [View on Vercel](https://opti-crop-smart-agricultural-production-optimization-fq9nba7ga.vercel.app)
+🚀 **Live Demo:** [View on Vercel](https://opti-crop-smart-agricultural-produc-omega.vercel.app/)
 
 OptiCrop is a production-grade agricultural AI platform that recommends the optimal crop to cultivate based on soil chemistry and environmental inputs. It uses an ensemble ML model (Extra Trees, F1-weighted = 0.93) trained on a labeled agronomic dataset. The platform exposes a Flask REST API, a multi-page frontend, and an admin dashboard — all deployable via Docker.
 
